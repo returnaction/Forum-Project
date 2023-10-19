@@ -1,0 +1,700 @@
+{
+	"info": {
+		"_postman_id": "7595d509-76a5-4b9b-bd80-c4dcb491c1a9",
+		"name": "Forum_WebAPIForum_Proj2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28100906"
+	},
+	"item": [
+		{
+			"name": "Comments Copy",
+			"item": [
+				{
+					"name": "Post a Comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InRvbXRob20iLCJlbWFpbCI6InRvbUBnbWFpbC5jcG0iLCJpZCI6IjJjNjkyODkzLTg5YmQtNDYyOC05Mjk5LTFjYmFiN2RhODlmOCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE2OTY1MDg2NjYsImlzcyI6IkZ1bGxTdGFja0F1dGhfV2ViQVBJIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.XxQzRVFi1pqVlhvbRDfvnrckSl2mbBbuHV44HXrJWwY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n\r\n{\r\n    \"text\":\"Comment from Tom \",\r\n    \"topicid\": 1\r\n    // \"userId\":\"609286d3-fb94-4c02-8a46-ebab70f85d08\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/comment",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteComment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImJvYiIsImVtYWlsIjoiYm9iQGJvYi5ib2IiLCJpZCI6IjFmNTZkYjQ1LWEyMjYtNGZlNi05MDgxLWUzOTlhNzZjNWJmMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE2OTYwODIxMDYsImlzcyI6IkZ1bGxTdGFja0F1dGhfV2ViQVBJIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.DXIw3w6AtlBuBLShFqTkos2bytpHxe5j610ja54jgzQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:5001/api/comment/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"comment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateComment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im5pa29iZXIiLCJlbWFpbCI6Im5pa29iZXJAZ21haWwuY29tIiwiaWQiOiI5ZDU1MGE2Ni01ZDFjLTQ4YWItYWEzZC05NmM1ZmU0NzlhMDAiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNjk2MDIzNjMxLCJpc3MiOiJGdWxsU3RhY2tBdXRoX1dlYkFQSSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.C1o8DRtWRXDZz-F2WwqPDrbCYWfyJC3YmX1bt3ZyiGw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\":\"Updated Comment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/comment/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"comment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Like a Comment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImJvYiIsImVtYWlsIjoiYm9iQGJvYi5ib2IiLCJpZCI6IjZiMWNmNzJmLWQ5YjUtNDI0Yi04Y2UzLWE4NTFlMDYzNjFmYSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE2OTYxNzc1NTQsImlzcyI6IkZ1bGxTdGFja0F1dGhfV2ViQVBJIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.pEsNGkfjrY0hpF6mcc1nflydEDNDOWG8Y1txhzKLMjI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:5001/api/comment/likecomment/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"comment",
+								"likecomment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Get Users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:5001/api/user",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User by Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:5001/api/user/1",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"user",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User by Id",
+							"request": {
+								"auth": {
+									"type": "jwt",
+									"jwt": [
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										},
+										{
+											"key": "algorithm",
+											"value": "HS256",
+											"type": "string"
+										},
+										{
+											"key": "isSecretBase64Encoded",
+											"value": false,
+											"type": "boolean"
+										},
+										{
+											"key": "payload",
+											"value": "{}",
+											"type": "string"
+										},
+										{
+											"key": "headerPrefix",
+											"value": "Bearer",
+											"type": "string"
+										},
+										{
+											"key": "queryParamKey",
+											"value": "token",
+											"type": "string"
+										},
+										{
+											"key": "header",
+											"value": "{}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im5pa29iZXIiLCJlbWFpbCI6Im5pa29iZXJAZ21haWwuY29tIiwiaWQiOiI3YzVhMGRhMy02Yjc3LTQ2ODItYmI5Yi0zYjAzZGRkMjM2ZDkiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNjk1OTIxMzkxLCJpc3MiOiJGdWxsU3RhY2tBdXRoX1dlYkFQSSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.LPG9XexrY7LFT-8Z2iz7LeOWdUm_pXPPf346wS-1Sog",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"Nikober\",\r\n    \"firstname\":\"Nikita\",\r\n    \"lastname\":\"Ober\",\r\n    \"profilepicture\":\"\"\r\n}\r\n\r\n// {\r\n//     \"username\":\"Nikober\",\r\n//     \"firstname\":\"Nikita\",\r\n//     \"lastname\":\"Ober\",\r\n//     \"profilepicture\":\"\"\r\n// }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:5001/api/user/7c5a0da3-6b77-4682-bb9b-3b03ddd236d9",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"user",
+										"7c5a0da3-6b77-4682-bb9b-3b03ddd236d9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User by Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im5pa29iZXIiLCJlbWFpbCI6Im5pa29iZXJAZ21haWwuY29tIiwiaWQiOiI3YzVhMGRhMy02Yjc3LTQ2ODItYmI5Yi0zYjAzZGRkMjM2ZDkiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNjk1OTIxMzkxLCJpc3MiOiJGdWxsU3RhY2tBdXRoX1dlYkFQSSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.LPG9XexrY7LFT-8Z2iz7LeOWdUm_pXPPf346wS-1Sog",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://localhost:5001/api/user/e5e0b6a3-30a0-40f4-8462-fd209378a92f",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"user",
+										"e5e0b6a3-30a0-40f4-8462-fd209378a92f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get messages",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:5001/api/user/messages",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"user",
+										"messages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get user by UserName",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GetUserData by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Ik5pa29iZXIiLCJlbWFpbCI6Im5pa29iZXJAZ21haWwuY29tIiwiaWQiOiJjNjkxNjA1OC1hMDZhLTQ0YWEtOTE4Ni1hOWU1ZmFlNmUwODEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNjk2MDQ0NjUzLCJpc3MiOiJGdWxsU3RhY2tBdXRoX1dlYkFQSSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.ZJXuYfrArh8yzdKAjZDzKpCr64prOQUvI2ZsvZS296M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:5001/api/user/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register_User",
+					"protocolProfileBehavior": {
+						"strictSSL": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Sam\",\r\n    \"lastname\": \"Henkel\",\r\n    \"username\": \"samhenkel\",\r\n    \"password\": \"Qw12345^\",\r\n    \"email\": \"samhenkel@gmail.com\"\r\n}\r\n\r\n// {\r\n//     \"firstname\": \"Bob\",\r\n//     \"lastname\": \"Bobson\",\r\n//     \"username\": \"bob\",\r\n//     \"password\": \"Qw12345^\",\r\n//     \"email\": \"bob@bob.bob\"\r\n// }\r\n\r\n// {\r\n//     \"firstname\": \"Nik\",\r\n//     \"lastname\": \"Ober\",\r\n//     \"username\": \"nikober\",\r\n//     \"password\": \"Qw12345^\",\r\n//     \"email\": \"nikober@gmail.com\"\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/authentication",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"authentication"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login_User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"samhenkel\",\r\n    \"password\": \"Qw12345^\"\r\n}\r\n\r\n// {\r\n//     \"username\": \"bob\",\r\n//     \"password\": \"Qw12345^\"\r\n// }\r\n\r\n// {\r\n//     \"username\": \"maks\",\r\n//     \"password\": \"Qw12345^\"\r\n// }\r\n\r\n// {\r\n//     \"username\": \"tomthom\",\r\n//     \"password\": \"Qw12345^\"\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/authentication/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"authentication",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Topics",
+			"item": [
+				{
+					"name": "GetAllTopicsShortData",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/topic",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"topic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTopicById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/topic/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"topic",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Topic",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im5pa29iZXIiLCJlbWFpbCI6Im5pa29iZXJAZ21haWwuY29tIiwiaWQiOiI5ZDU1MGE2Ni01ZDFjLTQ4YWItYWEzZC05NmM1ZmU0NzlhMDAiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNjk1OTk1OTI3LCJpc3MiOiJGdWxsU3RhY2tBdXRoX1dlYkFQSSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.eDe7P3PsfX_2zADoQWm4EFhohR4RWYFMRyOAFFaRJB0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Bitcoin is a scam\",\r\n    \"text\":\"Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\r\n}\r\n\r\n// {\r\n//     \"title\":\"Bitcoin is a scam\",\r\n//     \"text\":\"Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/topic",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"topic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateTopic",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im5pa29iZXIiLCJlbWFpbCI6Im5pa29iZXJAZ21haWwuY29tIiwiaWQiOiI5ZDU1MGE2Ni01ZDFjLTQ4YWItYWEzZC05NmM1ZmU0NzlhMDAiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNjk1OTk1OTI3LCJpc3MiOiJGdWxsU3RhY2tBdXRoX1dlYkFQSSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.eDe7P3PsfX_2zADoQWm4EFhohR4RWYFMRyOAFFaRJB0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Updated Crypto\",\r\n    \"text\":\"Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/topic/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"topic",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteTopic",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Ik5pa29iZXIiLCJlbWFpbCI6Im5pa29iZXJAZ21haWwuY29tIiwiaWQiOiJjNjkxNjA1OC1hMDZhLTQ0YWEtOTE4Ni1hOWU1ZmFlNmUwODEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNjk2MDgyODg0LCJpc3MiOiJGdWxsU3RhY2tBdXRoX1dlYkFQSSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.uhAMTA_tipffHqb7rNo_ZY6Ol2dPwCJulan0P7IvGnY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:5001/api/topic/3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"topic",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LikeForTopic",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImJvYiIsImVtYWlsIjoiYm9iQGJvYi5ib2IiLCJpZCI6IjZiMWNmNzJmLWQ5YjUtNDI0Yi04Y2UzLWE4NTFlMDYzNjFmYSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE2OTYxNzUzMDUsImlzcyI6IkZ1bGxTdGFja0F1dGhfV2ViQVBJIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.T1SAaQg2SQFjTl-EkmqOWbbg7PvHZQ_lAifsuf78FEs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:5001/api/topic/liketopic/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"topic",
+								"liketopic",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DirectMessages",
+			"item": [
+				{
+					"name": "SendMessage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im1ha3MiLCJlbWFpbCI6Im1ha3NAZ21haWwuY29tIiwiaWQiOiI4MzljMGVkMC0zZGViLTQwYzMtYjc1MC03ZjcyM2RjNmE0YTkiLCJleHAiOjE2OTY2MTI2OTUsImlzcyI6IkZ1bGxTdGFja0F1dGhfV2ViQVBJIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.XKfI6mlPkfOkH22B7ad085D4jIOqP-Qj0fCBFihtLBg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\":\"message from TOM\",\r\n    \"touserid\":\"609286d3-fb94-4c02-8a46-ebab70f85d08\"\r\n}\r\n\r\n// {\r\n//     \"text\":\"message from past\",\r\n//     \"touserid\":\"7209de31-4a47-44c0-a126-2a2df0dd6b4b\"\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/directmessage",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"directmessage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllChats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InNhbWhlbmtlbCIsImVtYWlsIjoic2FtaGVua2VsQGdtYWlsLmNvbSIsImlkIjoiNjA5Mjg2ZDMtZmI5NC00YzAyLThhNDYtZWJhYjcwZjg1ZDA4IiwiZXhwIjoxNjk2Njk2MTIzLCJpc3MiOiJGdWxsU3RhY2tBdXRoX1dlYkFQSSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.jhex8UddhUu-he2oj83ol61OMLQRXFDj8gbevjVWLeY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:5001/api/directmessage",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"directmessage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMessagesOfUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InNhbWhlbmtlbCIsImVtYWlsIjoic2FtaGVua2VsQGdtYWlsLmNvbSIsImlkIjoiNjA5Mjg2ZDMtZmI5NC00YzAyLThhNDYtZWJhYjcwZjg1ZDA4IiwiZXhwIjoxNjk2Njk2MTIzLCJpc3MiOiJGdWxsU3RhY2tBdXRoX1dlYkFQSSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.jhex8UddhUu-he2oj83ol61OMLQRXFDj8gbevjVWLeY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:5001/api/directmessage/messages/b1dc9069-1ae8-41d3-86f3-50b4be460a25",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"directmessage",
+								"messages",
+								"b1dc9069-1ae8-41d3-86f3-50b4be460a25"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
